@@ -2,7 +2,7 @@
 
 Tautan Raka Wijaya, motion designer di Jakarta: lembar cue showreel 2026 yang bisa digeser, enam proyek, rate card, ketersediaan, dan formulir brief.
 
-**Demo live:** https://linkinbio-pulse.vercel.app
+**Demo live:** https://linkinbio-pulse.pintuweb.id
 
 ![Tangkapan layar PULSE](public/og.jpg)
 

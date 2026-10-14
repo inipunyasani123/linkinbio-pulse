@@ -4,10 +4,10 @@ import "./globals.css";
 const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-grotesk", weight: ["400", "500", "700"] });
 const jbmono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jbmono", weight: ["400", "700"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Raka Wijaya","jobTitle":"Motion & Visual Designer","url":"https://linkinbio-pulse.vercel.app","inLanguage":"id"}};
+const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Raka Wijaya","jobTitle":"Motion & Visual Designer","url":"https://linkinbio-pulse.pintuweb.id","inLanguage":"id"}};
 
 export const metadata = {
-  metadataBase: new URL("https://linkinbio-pulse.vercel.app"),
+  metadataBase: new URL("https://linkinbio-pulse.pintuweb.id"),
   title: { default: "Raka Wijaya — Motion Designer", template: "%s — Raka Wijaya" },
   description: "Tautan Raka Wijaya, motion designer di Jakarta: lembar cue showreel 2026 yang bisa digeser, enam proyek, rate card, ketersediaan, dan formulir brief.",
   applicationName: "PULSE",
@@ -15,11 +15,11 @@ export const metadata = {
   authors: [{ name: "PULSE" }],
   creator: "PULSE",
   publisher: "PULSE",
-  alternates: { canonical: "https://linkinbio-pulse.vercel.app" },
+  alternates: { canonical: "https://linkinbio-pulse.pintuweb.id" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://linkinbio-pulse.vercel.app",
+    url: "https://linkinbio-pulse.pintuweb.id",
     siteName: "PULSE",
     title: "Raka Wijaya — Motion Designer",
     description: "Tautan Raka Wijaya, motion designer di Jakarta: lembar cue showreel 2026 yang bisa digeser, enam proyek, rate card, ketersediaan, dan formulir brief.",
