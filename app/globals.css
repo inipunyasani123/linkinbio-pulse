@@ -22,7 +22,29 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.03em; }
 
 .neon-lime { color: #d3ff3d; text-shadow: 0 0 24px rgba(211, 255, 61, 0.45); }
 
-@keyframes pulse-dot { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.7); opacity: 0.4; } }
-.pulse-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
+/* Masuk: naik dan muncul dengan kurva easing andalan situs ini. */
+@keyframes masuk { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.masuk { animation: masuk 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* Baris tautan: judul bergeser dan miring saat disorot, dengan pegas kecil. */
+.geser { display: inline-block; transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s; }
+.group:hover .geser, .group:focus-visible .geser { transform: translateX(14px) skewX(-6deg); }
+
+/* Kurva easing di beranda: titik di sepanjang kurva + balok pratinjau. */
+@keyframes kurva-titik { 0%, 12% { offset-distance: 0%; } 72%, 100% { offset-distance: 100%; } }
+.kurva-titik { offset-path: path('M 0 240 C 52.8 0 86.4 0 240 0'); offset-rotate: 0deg; animation: kurva-titik 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+@keyframes kurva-balok { 0%, 12% { transform: translateX(0); } 72%, 100% { transform: translateX(208px); } }
+.kurva-balok { animation: kurva-balok 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
 
 :focus-visible { outline: 2px solid #d3ff3d; outline-offset: 3px; }
+
+/* Hormati pilihan "kurangi gerakan": konten langsung tampil, hiasan berhenti. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

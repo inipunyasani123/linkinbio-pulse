@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { SEDIA, TARIF } from '@/lib/pulse';
+import { TARIF, sedia } from '@/lib/pulse';
+import useHariIni from './useHariIni';
 
-export default function FormHire() {
+export default function FormHire({ hari: awal }) {
+  const hari = useHariIni(awal);
   const [selesai, setSelesai] = useState(false);
-  const input = 'w-full border-b border-white/30 bg-transparent py-2 text-white placeholder:text-white/40 focus:border-[#d3ff3d] focus:outline-none';
+  const input = 'w-full border-b border-white/45 bg-transparent py-2 text-white placeholder:text-white/40 focus:border-[#d3ff3d]';
 
   return (
     <section id="form" aria-labelledby="form-h" className="relative z-10 mt-14 scroll-mt-8 rounded-2xl border border-white/15 p-5 md:p-8">
@@ -14,7 +16,7 @@ export default function FormHire() {
         <div role="status" className="mt-5">
           <p className="font-mono text-sm text-[#d3ff3d]">&gt; brief diterima_</p>
           <p className="mt-2 text-sm text-white/75">Ini purwarupa desain: tidak ada pesan yang benar-benar dikirim.</p>
-          <button type="button" onClick={() => setSelesai(false)} className="mt-5 rounded-full border border-white/30 px-4 py-2 font-mono text-xs uppercase hover:border-[#d3ff3d] hover:text-[#d3ff3d]">Kirim brief lain</button>
+          <button type="button" onClick={() => setSelesai(false)} className="mt-5 min-h-11 rounded-full border border-white/30 px-5 py-2 font-mono text-xs uppercase hover:border-[#d3ff3d] hover:text-[#d3ff3d]">Kirim brief lain</button>
         </div>
       ) : (
         <form onSubmit={(e) => { e.preventDefault(); setSelesai(true); }} className="mt-6 grid gap-6 md:grid-cols-2">
@@ -32,7 +34,7 @@ export default function FormHire() {
           </div>
           <div>
             <label htmlFor="h-bulan" className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70">Mulai</label>
-            <select id="h-bulan" className={`${input} bg-[#0a0a0c]`}>{SEDIA.filter(([, s]) => s !== 'penuh').map(([b]) => <option key={b}>{b}</option>)}</select>
+            <select id="h-bulan" className={`${input} bg-[#0a0a0c]`}>{sedia(hari).filter((s) => s.status !== 'penuh').map((s) => <option key={s.label}>{s.label}</option>)}</select>
           </div>
           <div className="md:col-span-2">
             <label htmlFor="h-brief" className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70">Brief singkat</label>

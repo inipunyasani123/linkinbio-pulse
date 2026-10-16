@@ -23,7 +23,7 @@ Persona Raka Wijaya, motion designer. Baris tautan tipografi neon berukuran raks
 - Next.js 15.5 (App Router) dan React 19
 - Tailwind CSS v4
 - JavaScript
-- Framer Motion, Lucide (ikon)
+- Lucide (ikon); animasi dengan CSS
 - Font: Space Grotesk, JetBrains Mono (next/font)
 - SEO: metadata per halaman, Open Graph, JSON-LD, sitemap.xml, dan robots.txt
 

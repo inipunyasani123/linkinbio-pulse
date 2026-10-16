@@ -1,14 +1,17 @@
-import { SEDIA, SITE, TARIF, rp } from '@/lib/pulse';
+import { SITE, TARIF, rp } from '@/lib/pulse';
+import { hariIniWIB } from '@/lib/waktu';
 import Kembali from '../components/Kembali';
 import FormHire from '../components/FormHire';
+import Sedia from '../components/Sedia';
 
 export const metadata = {
   title: 'Rate Card & Hire',
-  description: 'Tarif mulai Raka Wijaya untuk loop media sosial, title sequence, dan brand motion system, ketersediaan Oktober 2026–Januari 2027, dan formulir brief.',
+  description: 'Tarif mulai Raka Wijaya untuk loop media sosial, title sequence, dan brand motion system, ketersediaan empat bulan ke depan, dan formulir brief.',
   alternates: { canonical: `${SITE}/hire` },
 };
 
 export default function Hire() {
+  const hari = hariIniWIB();
   return (
     <main className="relative min-h-screen px-6 py-10 md:px-14">
       <div className="scanlines" aria-hidden="true" />
@@ -27,17 +30,10 @@ export default function Hire() {
 
       <section aria-labelledby="sedia-h" className="relative z-10 mt-14">
         <h2 id="sedia-h" className="font-mono text-xs uppercase tracking-[0.3em] text-white/70">Ketersediaan</h2>
-        <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
-          {SEDIA.map(([b, s]) => (
-            <li key={b} className={`rounded-xl border p-4 ${s === 'penuh' ? 'border-white/15 text-white/60' : 'border-[#d3ff3d]/60'}`}>
-              <p className="font-mono text-xs uppercase tracking-wide">{b}</p>
-              <p className={`mt-2 font-display text-2xl font-bold uppercase ${s === 'penuh' ? '' : 'text-[#d3ff3d]'}`}>{s}</p>
-            </li>
-          ))}
-        </ul>
+        <Sedia hari={hari} />
       </section>
 
-      <FormHire />
+      <FormHire hari={hari} />
       <p className="relative z-10 mt-10 font-mono text-[11px] text-white/60">Tarif dan ketersediaan adalah contoh purwarupa desain.</p>
     </main>
   );

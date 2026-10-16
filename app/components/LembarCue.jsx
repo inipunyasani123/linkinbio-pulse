@@ -24,7 +24,7 @@ export default function LembarCue() {
         {CUE.map(([s, e], k) => <span key={s} className={`h-full border-r border-[#0a0a0c] ${k === i ? 'bg-[#d3ff3d]' : 'bg-white/25'}`} style={{ width: `${((e - s) / TOTAL) * 100}%` }} />)}
       </div>
       <label htmlFor="cue-waktu" className="sr-only">Penanda waktu showreel</label>
-      <input id="cue-waktu" type="range" min={0} max={TOTAL - 1} value={t} onChange={(e) => setT(Number(e.target.value))} aria-valuetext={`${tc(t)}, ${proyek}`} className="mt-3 w-full accent-[#d3ff3d]" />
+      <input id="cue-waktu" type="range" min={0} max={TOTAL - 1} value={t} onChange={(e) => setT(Number(e.target.value))} aria-valuetext={`${tc(t)}, ${proyek}`} className="mt-1 h-11 w-full cursor-pointer accent-[#d3ff3d]" />
 
       <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]" aria-live="polite">
         <div>
@@ -41,7 +41,7 @@ export default function LembarCue() {
       <ol className="mt-8 grid gap-2 border-t border-white/15 pt-5 md:grid-cols-3">
         {CUE.map(([s, , p], k) => (
           <li key={s}>
-            <button type="button" onClick={() => setT(s)} aria-current={k === i ? 'true' : undefined} className={`w-full rounded-lg px-3 py-2 text-left font-mono text-xs transition ${k === i ? 'bg-[#d3ff3d] text-[#0a0a0c]' : 'text-white/75 hover:bg-white/10'}`}>
+            <button type="button" onClick={() => setT(s)} aria-current={k === i ? 'true' : undefined} className={`min-h-11 w-full rounded-lg px-3 py-2 text-left font-mono text-xs transition ${k === i ? 'bg-[#d3ff3d] text-[#0a0a0c]' : 'text-white/75 hover:bg-white/10'}`}>
               {tc(s)} — {p}
             </button>
           </li>
