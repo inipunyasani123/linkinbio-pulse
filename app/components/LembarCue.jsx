@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { CUE, tc } from '@/lib/pulse';
+import { BINGKAI, CUE, SEGMEN_BINGKAI, tc } from '@/lib/pulse';
+import Gambar from './Gambar';
 
 const TOTAL = CUE[CUE.length - 1][1];
 
@@ -14,6 +15,13 @@ export default function LembarCue() {
   return (
     <section aria-labelledby="cue-h" className="relative z-10 mt-12 rounded-2xl border border-white/15 bg-white/[0.03] p-5 md:p-8">
       <h2 id="cue-h" className="sr-only">Lembar cue showreel</h2>
+      {/* Monitor: bingkai diam segmen yang sedang ditunjuk penanda waktu */}
+      <div className="relative mb-6 aspect-video overflow-hidden rounded-xl border border-white/15 bg-[#0a0a0c]">
+        {SEGMEN_BINGKAI.map((b, k) => (
+          <Gambar key={b} src={`/images/reel/${b}.webp`} alt={k === i ? BINGKAI[b] : ''} aria-hidden={k === i ? undefined : 'true'} width={1280} height={720} asli={1280} sizes="(min-width: 1024px) 860px, calc(100vw - 88px)" className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${k === i ? 'opacity-100' : 'opacity-0'}`} />
+        ))}
+        <span className="absolute left-3 top-3 rounded bg-black/70 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[#d3ff3d]" aria-hidden="true">● segmen {i + 1}/{CUE.length}</span>
+      </div>
       <div className="flex items-baseline justify-between font-mono">
         <span className="text-4xl font-bold text-[#d3ff3d] md:text-6xl" aria-hidden="true">{tc(t)}</span>
         <span className="text-xs uppercase tracking-[0.2em] text-white/65">/ {tc(TOTAL)}</span>

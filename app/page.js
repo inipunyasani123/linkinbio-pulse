@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Gambar from './components/Gambar';
 import { ArrowUpRight } from 'lucide-react';
 import { LINKS, PROFIL } from '@/lib/pulse';
 import { hariIniWIB } from '@/lib/waktu';
@@ -49,7 +50,10 @@ export default function Home() {
 
       <section className="masuk relative z-10 mt-14 md:mt-20 md:flex md:items-end md:justify-between md:gap-10" style={{ animationDelay: '0.05s' }}>
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/70">{PROFIL.nama} — {PROFIL.kota}</p>
+          <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-white/70">
+            <Gambar src="/images/raka-wijaya.webp" alt={`Potret ilustrasi ${PROFIL.nama}`} width={48} height={48} loading="eager" className="h-12 w-12 shrink-0 rounded-full border border-[#d3ff3d]/50 object-cover" />
+            <span>{PROFIL.nama} — {PROFIL.kota}</span>
+          </p>
           <h1 className="mt-3 text-6xl font-bold uppercase leading-[0.9] md:text-8xl">
             Motion<br /><span className="neon-lime">Designer</span>
           </h1>

@@ -1,4 +1,5 @@
-import { PROYEK, SITE } from '@/lib/pulse';
+import { BINGKAI, PROYEK, SITE } from '@/lib/pulse';
+import Gambar from '../components/Gambar';
 import Kembali from '../components/Kembali';
 import LembarCue from '../components/LembarCue';
 
@@ -21,7 +22,8 @@ export default function Showreel() {
         <h2 id="proyek-h" className="font-mono text-xs uppercase tracking-[0.3em] text-white/70">002 / proyek</h2>
         <ul className="mt-4 border-t border-white/15">
           {PROYEK.map((p) => (
-            <li key={p.nama} className="grid gap-2 border-b border-white/15 py-5 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1.4fr)] md:items-baseline md:gap-6">
+            <li key={p.nama} className="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-4 gap-y-2 border-b border-white/15 py-5 md:grid-cols-[10rem_minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1.4fr)] md:items-center md:gap-6">
+              <Gambar src={`/images/reel/${p.bingkai}.webp`} alt={BINGKAI[p.bingkai]} width={1280} height={720} asli={1280} sizes="(min-width: 768px) 160px, 112px" className="row-span-3 aspect-video w-full rounded-md border border-white/15 object-cover md:row-span-1" />
               <p className="font-display text-3xl font-bold uppercase tracking-tight">{p.nama}</p>
               <p className="font-mono text-xs uppercase tracking-wide text-[#d3ff3d]">{p.jenis} · {p.tahun} · {p.durasi}</p>
               <p className="text-sm text-white/75">{p.hasil}</p>
