@@ -5,6 +5,6 @@ Tidak ada foto stok dan tidak ada wajah orang sungguhan; Raka Wijaya dan klien d
 
 | Berkas | Isi | Sumber | Lisensi |
 | --- | --- | --- | --- |
-| raka-wijaya.webp | Potret ilustrasi Raka Wijaya (duotone lime) | Ilustrasi asli PintuWeb | Milik PintuWeb |
+| raka-wijaya.webp | Potret ilustrasi Raka Wijaya tanpa wajah (duotone lime, headphone) | Ilustrasi asli PintuWeb | Milik PintuWeb |
 | reel/pembuka.webp, kota-tanpa-tidur.webp, arus.webp, kopi-pagi.webp, riuh-fest.webp, penutup.webp | Bingkai diam enam segmen showreel | Ilustrasi asli PintuWeb | Milik PintuWeb |
 | reel/peta-rasa.webp, napas.webp | Bingkai diam dua proyek lain | Ilustrasi asli PintuWeb | Milik PintuWeb |
